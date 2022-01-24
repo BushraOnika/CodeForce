@@ -1,44 +1,27 @@
-#include <iostream>
-#include<bits/stdc++.h>
-
+#include <bits/stdc++.h>
 using namespace std;
+
 int main() {
-  int m;
-  cin>>m;
-  int a=0;
-    int count[m];
-   while(a<m) {
-       int n;
-       cin >> n;
-       int arr[n];
-       for (int i = 0; i < n; ++i) {
-           cin >> arr[i];
-       }
-       int max = arr[0];
-       int min = arr[0];
-       for (int i = 1; i < n; ++i) {
-           if (max < arr[i]) {
-               max = arr[i];
-           }
-           if (min > arr[i]) {
-               min = arr[i];
-           }
-       }
-       /*
-       int cout=0;
-       while (min!=max){
-           min++;
-           cout++;
-       }
-        */
-       int sub=max-min;
-       count[a]=sub;
-       a++;
-
-   }
-    for (int i = 0; i < m; ++i) {
-        cout<<count[i]<<endl;
-
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  int a;
+  cin>>a;
+  string arr[a];
+    for (int i = 0; i < a; ++i) {
+        string s;
+        cin>>s;
+        string a1=s.substr(0,s.length()/2);
+        string a2=s.substr(s.length()/2,s.length());
+      if(s.length()%2==0 && a1==a2){
+          arr[i]="Yes";
+         // arr[i]="Yes";
+      } else {
+          arr[i] = "No";
+      }
+       // cout<<arr[i]<<endl;
     }
+   for (int i = 0; i < a; ++i) {
+       cout<<arr[i]<< endl;
+   }
     return 0;
 }
